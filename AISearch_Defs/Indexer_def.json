@@ -1,0 +1,36 @@
+{
+    "@odata.context": "https://aisearchdemodj.search.windows.net/$metadata#indexers/$entity",
+    "@odata.etag": "\"0x8DC8EF8FF3C1D9B\"",
+    "name": "test",
+    "description": null,
+    "dataSourceName": "datademo",
+    "skillsetName": "testskillset",
+    "targetIndexName": "test",
+    "disabled": null,
+    "schedule": null,
+    "parameters": {
+      "batchSize": null,
+      "maxFailedItems": null,
+      "maxFailedItemsPerBatch": null,
+      "base64EncodeKeys": true,
+      "configuration": {}
+    },
+    "fieldMappings": [
+      {
+        "sourceFieldName": "metadata_storage_path",
+        "targetFieldName": "metadata_storage_path",
+        "mappingFunction": {
+          "name": "base64Encode",
+          "parameters": null
+        }
+      }
+    ],
+    "outputFieldMappings": [
+      {
+        "sourceFieldName": "/document/content/embedding",
+        "targetFieldName": "emeddings"
+      }
+    ],
+    "cache": null,
+    "encryptionKey": null
+  }

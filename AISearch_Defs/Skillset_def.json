@@ -1,0 +1,41 @@
+{
+    "@odata.context": "https://aisearchdemodj.search.windows.net/$metadata#skillsets/$entity",
+    "@odata.etag": "\"0x8DC8EE13A240B86\"",
+    "name": "testskillset",
+    "description": "",
+    "skills": [
+      {
+        "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+        "name": "#1",
+        "description": "Acronym linker",
+        "context": "/document/content",
+        "uri": "<Put Deployed Function URI Here>",
+        "httpMethod": "POST",
+        "timeout": "PT30S",
+        "batchSize": 1,
+        "degreeOfParallelism": null,
+        "authResourceId": null,
+        "inputs": [
+          {
+            "name": "text",
+            "source": "/document/content"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "embedding",
+            "targetName": "embedding"
+          }
+        ],
+        "httpHeaders": {},
+        "authIdentity": null
+      }
+    ],
+    "cognitiveServices": {
+      "@odata.type": "#Microsoft.Azure.Search.DefaultCognitiveServices",
+      "description": null
+    },
+    "knowledgeStore": null,
+    "indexProjections": null,
+    "encryptionKey": null
+  }
